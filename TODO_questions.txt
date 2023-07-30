@@ -1,0 +1,9 @@
+TODO:
+basically everything
+
+
+
+Questions:
+-DB
+-Apache??
+
