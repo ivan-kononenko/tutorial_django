@@ -1,0 +1,5 @@
+ <ul>
+    {% for post in latest_post_list %}
+        <li><a href="/blog/{{ post.id }}/">{{ post.post_body }}</a></li>
+    {% endfor %}
+ </ul>
