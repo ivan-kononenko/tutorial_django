@@ -1,10 +1,14 @@
 from django.db import models
+from mdeditor.fields import MDTextField
+
 
 class Post(models.Model):
     publication_date = models.DateTimeField("Publication Date")
-    text = models.CharField(max_length=4000)
+    post_body = MDTextField(null=True, blank=True)
+
 
 class Event(models.Model):
     publication_date = models.DateTimeField("Publication Date")
-    text = models.Charfield(max_length=4000)
+    event_body = MDTextField(null=True, blank=True)
     date_event = models.DateTimeField("Date of an event")
+
