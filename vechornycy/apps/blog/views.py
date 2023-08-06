@@ -4,11 +4,13 @@ from .models import Post, Event
 
 def main_page(request):
     latest_post_list=Post.objects.order_by("-publication_date")[:3]
-    context = {"latest_psot_list" : latest_post_list}
+    context = {"latest_post_list" : latest_post_list}
+    print(context)
     return render(request, "blog/main_page.html", context)
 
 
-def detail(request, post_id):
-    return HttpResponse("You're looking at post %s." % post_id)
+def post(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    return render(request, "blog/post.html", {"post" : post})
 
 

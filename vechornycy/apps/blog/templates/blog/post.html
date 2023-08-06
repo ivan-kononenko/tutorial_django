@@ -1,0 +1,5 @@
+{% load blog_extras %}
+
+<h1> {{ post.title }} </h1>
+<p> {{ post.post_body | convert_markdown | safe }} </p>
+		
