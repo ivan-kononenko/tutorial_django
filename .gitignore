@@ -1,0 +1,5 @@
+vechornycy/__pycache__/
+*.py[cod]
+vechornycy/db.sqlite3
+
+
