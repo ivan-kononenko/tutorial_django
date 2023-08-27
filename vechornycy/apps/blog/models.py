@@ -1,5 +1,4 @@
 from django.db import models
-from mdeditor.fields import MDTextField
 
 
 class Post(models.Model):

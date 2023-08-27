@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .models import Aboutus
 
-# Create your views here.
+
+def aboutus(request):
+    aboutus=Aboutus.objects.get(pk=post_id)
+    return render(request, "aboutus/aboutus.html", {"aboutus" : aboutus})
+

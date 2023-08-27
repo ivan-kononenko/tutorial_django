@@ -1,16 +1,17 @@
 from django.shortcuts import HttpResponse, render
 from .models import Post, Event
+from django.views import generic
+
+class MainView(generic.ListView):
+    template_name = "blog/main_page.html"
+    context_object_name = "latest_post_list"
+
+    def get_queryset(self):
+        """Return the last five published questions."""
+        return Post.objects.order_by("-publication_date")[:5]
 
 
-def main_page(request):
-    latest_post_list=Post.objects.order_by("-publication_date")[:3]
-    context = {"latest_post_list" : latest_post_list}
-    print(context)
-    return render(request, "blog/main_page.html", context)
 
-
-def post(request, post_id):
-    post = Post.objects.get(pk=post_id)
-    return render(request, "blog/post.html", {"post" : post})
-
-
+class PostView(generic.DetailView):
+    model = Post
+    template_name = "blog/post.html"
