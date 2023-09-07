@@ -1,9 +1,9 @@
 from django.shortcuts import HttpResponse, render
-from .models import Post, Event
+from .models import Post
 from django.views import generic
 
 class MainView(generic.ListView):
-    template_name = "blog/main_page.html"
+    template_name = "blog/main.html"
     context_object_name = "latest_post_list"
 
     def get_queryset(self):
