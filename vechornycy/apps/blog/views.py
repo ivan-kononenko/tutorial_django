@@ -8,7 +8,7 @@ class MainView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published questions."""
-        return Post.objects.order_by("-publication_date")[:5]
+        return Post.objects.order_by("-publication_date")[:9]
 
 
 

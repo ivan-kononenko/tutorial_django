@@ -1,7 +1,37 @@
 {% extends "base.html" %}
 
+{% load static%}
+{% block menu %}
+<nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="/">Головна</a>
+        <a class="nav-link fw-bold py-1 px-0 active" href="/blog/">Блог</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/events/">Анонси</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/contactus/">Зв'язатися</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/aboutus/">Про нас</a>
+      </nav>
+{% endblock %}
+
+
 {% block content %}
-	{% if latest_post_list %}
+<div class="container">	
+	  {% if latest_post_list %}
+		    {% for post in latest_post_list %}
+		    <div class="grid-item">
+			    <img src={{ post.pic }}>
+		        <h2><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a></h2>
+		        <p>...</p>
+		     </div>
+		    {% endfor %}
+		{% else %}
+		    <p>No posts are available.</p>
+		{% endif %}
+</div>
+{% endblock %}
+
+
+
+
+/*{% if latest_post_list %}
     	<ul>
 	    {% for post in latest_post_list %}
 	        <li><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a></li>
@@ -10,5 +40,14 @@
 	{% else %}
 	    <p>No posts are available.</p>
 	{% endif %}
-{% endblock %}
 
+
+<nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="/">Головна</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/blog/">Блог</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/events/">Анонси</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/contactus/">Зв'язатися</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/aboutus/">Про нас</a>
+      </nav>
+
+*/
