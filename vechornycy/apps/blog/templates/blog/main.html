@@ -6,18 +6,17 @@
         <a class="nav-link fw-bold py-1 px-0" href="/">Головна</a>
         <a class="nav-link fw-bold py-1 px-0 active" href="/blog/">Блог</a>
         <a class="nav-link fw-bold py-1 px-0" href="/events/">Анонси</a>
-        <a class="nav-link fw-bold py-1 px-0" href="/contactus/">Зв'язатися</a>
         <a class="nav-link fw-bold py-1 px-0" href="/aboutus/">Про нас</a>
       </nav>
 {% endblock %}
 
 
 {% block content %}
-<div class="container">	
+<div class="container-blog-list">
 	  {% if latest_post_list %}
 		    {% for post in latest_post_list %}
-		    <div class="grid-item">
-			    <img src={{ post.pic }}>
+		    <div class="grid-item-blog-list">
+			    <img src={{ post.pic.url }}>
 		        <h2><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a></h2>
 		        <p>...</p>
 		     </div>

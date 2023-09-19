@@ -25,5 +25,5 @@ urlpatterns = [
     path('events/', include("apps.events.urls")),
     path('aboutus/', include("apps.aboutus.urls")),
     path('', include("apps.mainpage.urls")),
-]
+]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,5 +1,25 @@
-{% load events_extras %}
+{% extends "base.html" %}
 
-<h1> {{ event.title }} </h1>
-<p> {{ event.event_body | convert_markdown | safe }} </p>
-		
+{% load static%}
+{% block menu %}
+<nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="/">Головна</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/blog/">Блог</a>
+        <a class="nav-link fw-bold py-1 px-0 active" href="/events/">Анонси</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/aboutus/">Про нас</a>
+      </nav>
+{% endblock %}
+
+{% block content %}
+<h1> {{ post.title }} </h1>
+<div class="container">
+    <div class="row">
+        <div class="col"><img src={{ event.pic.url }}></div>
+        <div class="col"><p>{{ event.event_body }}</p></div>
+    </div>
+    <div class="row" style="width:100%">
+        <div class="col">some stuff</div>
+    </div>
+</div>
+
+{% endblock %}
