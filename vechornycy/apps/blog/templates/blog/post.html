@@ -1,5 +1,24 @@
-{% load blog_extras %}
+{% extends "base.html" %}
 
+{% load static%}
+{% block menu %}
+<nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="/">Головна</a>
+        <a class="nav-link fw-bold py-1 px-0 active" href="/blog/">Блог</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/events/">Анонси</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/contactus/">Зв'язатися</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/aboutus/">Про нас</a>
+      </nav>
+{% endblock %}
+
+{% block content %}
 <h1> {{ post.title }} </h1>
-<p> {{ post.post_body | convert_markdown | safe }} </p>
+<div class="grid-container">
+        <div class="grid-item" style="grid-row: span 3; grid-column: span 3;"><img src={{ post.pic }}></div>
+        <div class="grid-item" style="grid-row: span 3; grid-column: span 3;"><p>{{ post.post_body }}</p></div>
+        <div class="grid-item" style="grid-column: span 6; height: 100px">some stuff</div>
+    </div>
+
+<p>  </p>
 		
+{% endblock %}
