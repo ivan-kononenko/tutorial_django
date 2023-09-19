@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static%}
+{% block menu %}
+<nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="/">Головна</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/blog/">Блог</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/events/">Анонси</a>
+        <a class="nav-link fw-bold py-1 px-0 active" href="/aboutus/">Про нас</a>
+      </nav>
+{% endblock %}
+
+{% block content%}
+<div class="container">
+    <img src="{% static '/images/admin_pic.jpg' %}">
+        <p>Зібралися якось адєсітка-веганша, геть-не-свята-харків'янка та руде філологичне чудисько в барі. А бармен їм і каже - ні, вечорниці тут проводить не дам!</p>
+</div>
+{% endblock %}
