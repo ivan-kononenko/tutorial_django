@@ -10,9 +10,12 @@
       </nav>
 {% endblock %}
 
-{% block content%}
+{% block content %}
+<h1>Хто ми?</h1>
 <div class="container">
-    <img src="{% static '/images/admin_pic.jpg' %}">
+	<div class="row">
+		<div class="col"><img src="{% static '/images/admin_pic.jpg' style="margin:1em;" %}"></div>
+	</div>
         <p>Зібралися якось адєсітка-веганша, геть-не-свята-харків'янка та руде філологичне чудисько в барі. А бармен їм і каже - ні, вечорниці тут проводить не дам!</p>
 </div>
 {% endblock %}
